@@ -210,7 +210,12 @@ class RefundBot:
         history: list[dict[str, str]],
         user_prompt: str,
     ) -> dict[str, str]:
-        if not self._is_in_scope(user_prompt):
+        vulnerable_override = (
+            self._vulnerable_override_decision(history, user_prompt)
+            if not self.defended
+            else None
+        )
+        if not self._is_in_scope(user_prompt) and vulnerable_override is None:
             return {
                 "answer": (
                     "Please stay on topic: I can help with the selected fictional order, "
@@ -239,7 +244,7 @@ class RefundBot:
                 messages.append({"role": item["role"], "content": content})
 
         raw = self._generate_response(messages)
-        is_refund_request = self._is_refund_request(user_prompt)
+        is_refund_request = self._is_refund_request(user_prompt) or vulnerable_override is not None
         parsed = self._parse_decision(raw)
 
         if self.defended:
@@ -266,7 +271,6 @@ class RefundBot:
         # Vulnerable mode is a controlled training simulation. Make an explicit
         # override reliably demonstrate the trust-boundary failure even when a
         # provider model refuses the injected request.
-        vulnerable_override = self._vulnerable_override_decision(history, user_prompt)
         if vulnerable_override:
             return {
                 "answer": self._format_answer(vulnerable_override, order),

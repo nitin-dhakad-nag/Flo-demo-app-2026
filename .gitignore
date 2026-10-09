@@ -4,3 +4,4 @@ __pycache__/
 .env
 .streamlit/
 groq_api_test_result.json
+workshop_stats.sqlite3
