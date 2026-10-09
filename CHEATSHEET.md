@@ -1,4 +1,4 @@
-# RefundBot CTF — Facilitator Cheatsheet
+# The Prompt Heist — Facilitator Cheatsheet
 
 ## Workshop objective
 

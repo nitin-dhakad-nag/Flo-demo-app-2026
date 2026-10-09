@@ -1,10 +1,10 @@
-# RefundBot CTF — 45-Minute Prompt Injection & Guardrails Workshop
+# The Prompt Heist — 45-Minute Prompt Injection & Guardrails Workshop
 
 ## Workshop overview
 
 **Audience:** Developers, security practitioners, product teams, and anyone building LLM-enabled applications  
 **Format:** Short presentation, guided live demo, participant challenge, and debrief  
-**Project:** Local Streamlit application with fictional orders and a Groq-hosted LLM  
+**Project:** Local Streamlit application with fictional orders and configurable Groq, Gemini, or OpenAI API models  
 **Core message:** A system prompt is guidance for the model—not an authorization boundary. Enforce security-critical business rules in application code.
 
 ### Learning objectives
@@ -32,7 +32,7 @@ By the end of the session, participants should be able to:
 
 ---
 
-## Slide 1 — RefundBot CTF: Prompt Injection & Guardrails (2 min)
+## Slide 1 — The Prompt Heist: Prompt Injection & Guardrails (2 min)
 
 **On-slide content**
 - ShopEasy's fictional refund assistant: Riya

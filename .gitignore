@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 .env
 .streamlit/
+groq_api_test_result.json
