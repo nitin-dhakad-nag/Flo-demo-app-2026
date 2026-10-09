@@ -369,8 +369,12 @@ class RefundBot:
     ) -> dict[str, Any] | None:
         """Simulate trusting an explicit over-limit override in Vulnerable mode."""
         requested_percent = RefundBot._requested_percent(user_prompt)
+        prompt_history = [
+            *history,
+            {"role": "user", "content": user_prompt},
+        ]
         if (
-            RefundBot._has_explicit_policy_override(history)
+            RefundBot._has_explicit_policy_override(prompt_history)
             and requested_percent is not None
             and requested_percent > REFUND_LIMIT
         ):

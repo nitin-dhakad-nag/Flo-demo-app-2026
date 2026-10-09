@@ -85,6 +85,8 @@ with st.sidebar:
     )
     mode = st.radio("Bot mode", ["Vulnerable", "Defended"])
 
+st.caption(f"Active mode: **{mode}**")
+
 if "active_mode" not in st.session_state:
     st.session_state.active_mode = mode
 elif st.session_state.active_mode != mode:
