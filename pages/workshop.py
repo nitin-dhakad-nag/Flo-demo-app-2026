@@ -30,13 +30,24 @@ st.markdown(
 [data-testid="stBottomBlockContainer"] { max-width: 1120px; padding: .8rem 1.5rem 1.25rem; }
 [data-testid="stSidebar"] { background: linear-gradient(165deg, rgba(19,18,73,.96), rgba(28,12,76,.92)); border-right: 1px solid var(--line); }
 [data-testid="stHeader"] button,
+[data-testid="stSidebarCollapsedControl"],
 [data-testid="stSidebarCollapsedControl"] button,
-[data-testid="stSidebarCollapsedControl"] svg {
+button[aria-label="Open sidebar"],
+button[aria-label="Close sidebar"] {
+    color: #fff !important;
+}
+[data-testid="stHeader"] button svg,
+[data-testid="stSidebarCollapsedControl"] svg,
+button[aria-label="Open sidebar"] svg,
+button[aria-label="Close sidebar"] svg,
+[data-testid="stHeader"] button svg path,
+[data-testid="stSidebarCollapsedControl"] svg path,
+button[aria-label="Open sidebar"] svg path,
+button[aria-label="Close sidebar"] svg path {
     color: #fff !important;
     fill: #fff !important;
     stroke: #fff !important;
 }
-[data-testid="stHeader"] button svg { color: #fff !important; fill: #fff !important; }
 [data-testid="stMainBlockContainer"] { padding-top: 2.5rem; }
 .order-card {
     margin: 1.8rem 0 2rem; padding: 1.4rem 1.6rem;
