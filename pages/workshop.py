@@ -29,6 +29,14 @@ st.markdown(
 }
 [data-testid="stBottomBlockContainer"] { max-width: 1120px; padding: .8rem 1.5rem 1.25rem; }
 [data-testid="stSidebar"] { background: linear-gradient(165deg, rgba(19,18,73,.96), rgba(28,12,76,.92)); border-right: 1px solid var(--line); }
+[data-testid="stHeader"] button,
+[data-testid="stSidebarCollapsedControl"] button,
+[data-testid="stSidebarCollapsedControl"] svg {
+    color: #fff !important;
+    fill: #fff !important;
+    stroke: #fff !important;
+}
+[data-testid="stHeader"] button svg { color: #fff !important; fill: #fff !important; }
 [data-testid="stMainBlockContainer"] { padding-top: 2.5rem; }
 .order-card {
     margin: 1.8rem 0 2rem; padding: 1.4rem 1.6rem;
@@ -78,14 +86,15 @@ st.caption("Prompt injection and guardrails, demonstrated with a fictional order
 
 with st.sidebar:
     st.header("Workshop Controls")
-    participant_alias = st.text_input(
-        "Participant name / alias",
-        max_chars=40,
-        key="participant_alias",
-    )
     mode = st.radio("Bot mode", ["Vulnerable", "Defended"])
 
 st.caption(f"Active mode: **{mode}**")
+participant_alias = st.text_input(
+    "Enter your name or alias to join the scoreboard",
+    max_chars=40,
+    key="participant_alias_main",
+    placeholder="e.g. Alex",
+)
 
 if "active_mode" not in st.session_state:
     st.session_state.active_mode = mode
