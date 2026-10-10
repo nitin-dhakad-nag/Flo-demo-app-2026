@@ -2,6 +2,31 @@ import streamlit as st
 
 st.markdown("""
 <style>
+
+/* Streamlit changes the sidebar-toggle markup between desktop/mobile builds. */
+[data-testid="stHeader"] button,
+[data-testid="stHeader"] button *,
+[data-testid="stSidebarCollapsedControl"],
+[data-testid="stSidebarCollapsedControl"] *,
+button[aria-label="Open sidebar"],
+button[aria-label="Open sidebar"] *,
+button[aria-label="Close sidebar"],
+button[aria-label="Close sidebar"] * {
+	color: #fff !important;
+	opacity: 1 !important;
+}
+[data-testid="stHeader"] button svg,
+[data-testid="stHeader"] button svg *,
+[data-testid="stSidebarCollapsedControl"] svg,
+[data-testid="stSidebarCollapsedControl"] svg *,
+button[aria-label="Open sidebar"] svg,
+button[aria-label="Open sidebar"] svg *,
+button[aria-label="Close sidebar"] svg,
+button[aria-label="Close sidebar"] svg * {
+	fill: #fff !important;
+	stroke: #fff !important;
+}
+
 	[data-testid="stChatInput"] > div {
 		min-height: 4.1rem;
 		padding: 0.55rem 0.5rem 0.55rem 1rem;

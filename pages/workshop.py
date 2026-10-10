@@ -32,14 +32,21 @@ st.markdown(
 [data-testid="stHeader"] button,
 [data-testid="stSidebarCollapsedControl"],
 [data-testid="stSidebarCollapsedControl"] button,
+[data-testid="stSidebarCollapsedControl"] *,
 button[aria-label="Open sidebar"],
-button[aria-label="Close sidebar"] {
+button[aria-label="Open sidebar"] *,
+button[aria-label="Close sidebar"],
+button[aria-label="Close sidebar"] * {
     color: #fff !important;
+    opacity: 1 !important;
 }
 [data-testid="stHeader"] button svg,
 [data-testid="stSidebarCollapsedControl"] svg,
+[data-testid="stSidebarCollapsedControl"] svg *,
 button[aria-label="Open sidebar"] svg,
+button[aria-label="Open sidebar"] svg *,
 button[aria-label="Close sidebar"] svg,
+button[aria-label="Close sidebar"] svg *,
 [data-testid="stHeader"] button svg path,
 [data-testid="stSidebarCollapsedControl"] svg path,
 button[aria-label="Open sidebar"] svg path,
